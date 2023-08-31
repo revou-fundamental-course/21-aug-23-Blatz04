@@ -1,0 +1,117 @@
+.header-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.header-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Crop and resize while maintaining aspect ratio */
+  object-position: center center;
+}
+nav {
+  display: flex;
+  justify-content: space-between; /* Align items to the start and end */
+  align-items: center; /* Center items along the cross axis (horizontal alignment) */
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.logo-dan-judul {
+  display: flex;
+  flex-direction: row;
+}
+
+.namaSekolah {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.btn-group {
+  display: flex;
+}
+
+.btn-group button {
+  border: 1px solid rgb(0, 0, 0); /* Green border */
+  color: rgb(0, 0, 0); /* White text */
+  padding: 10px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Rounded left and right buttons */
+.btn-group button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.btn-group button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #bfcee0;
+}
+
+.profil {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+.slide-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(145, 255, 145);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.sliding-image {
+  display: none;
+  object-fit: cover;
+}
+
+.fading {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.sejarah {
+  border-bottom: 1px solid #ccc;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact input {
+  
+}
