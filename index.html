@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="css\style.css">
 </head>
 <body>
     <header>
+        <a id="home"></a>
         <div class="header-image-container">
             <img class="header-image" src="images\DSC00010-1-scaled.jpg" alt="Header Image">
         </div>
@@ -15,27 +16,27 @@
     <nav>
         <div class="logo-dan-judul">
             <img src="images\MAN-LOGO.webp" alt="Logo MAN" width="100" height="100">
-            <div class="namaSekolah">
+            <div class="nama-sekolah">
                 <p>MADRASAH ALIYAH NEGERI</p>
                 <p>Kotawaringin Timur</p>
             </div>
         </div>
         <div class="btn-group">
-            <button>Halaman Utama</button>
-            <button>Profil Kami</button>
-            <button>History</button>
-            <button>Kontak</button>
+            <button><a href="#home">Halaman Utama</a></button>
+            <button><a href="#profil">Profil Kami</a></button>
+            <button><a href="#sejarah">History</a></button>
+            <button><a href="#contact">Kontak</a></button>
         </div>
     </nav>
-    <div class="profil">
-        <h1>Selamat datang <span id="pengguna"></span>, di website kami!</h1>
+    <div class="profil" id="profil">
+        <h1>Selamat datang <span id="pengguna"></span> di website kami!</h1>
         <div class="slide-container">
             <img class="sliding-image fading" src="images\497785.jpg" alt="Sliding Image 1"/>
             <img class="sliding-image fading" src="images\IMG-20211214-WA0003.jpg" alt="Sliding Image 2"/>
             <img class="sliding-image fading" src="images\STUDI.jpg" alt="Sliding Image 3"/>
         </div>
     </div>
-    <div class="sejarah">
+    <div class="sejarah" id="sejarah">
         <h1>Sejarah</h1>
         <pre>
 Madrasah Aliyah Negeri Sampit pada awal berdirinya merupakan alih fungsi dari sekolah Pendidikan Guru Agama Negeri (PGAN) Sampit, berdasarkan Surat Keputusan Menteri Agama RI Nomor 42 Tahun 1992 Tanggal 27 Januari 1992. Dengan adanya surat keputusan tersebut, PGAN Sampit yang sudah lama eksis dalam dunia pendidikan dan menghasilkan banyak lulusan, kemudian secara resmi statusnya berubah menjadi Madrasah Aliyah Negeri.
@@ -59,18 +60,48 @@ Bapak M. Rusidi, S.Ag, M.Pd.I (2017- Sekarang)
     </div>
     <div>
         <h1>Kontak Kami!</h1>
-        <div class="contact">
-            <form>
-                <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" placeholder="Nama">
+        <div class="contact" id="contact">
+            <form id="form-contact" name="form-contact" onsubmit="return validateForm()">
+                <div class="form-row">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" placeholder="Nama">
+                </div>
+                <div class="form-row">
+                    <label for="tl">Tanggal Lahir</label>
+                    <input type="date" id="tl" name="tl">
+                </div>
+                <div class="form-row">
+                    <!-- merapikan label dan radio -->
+                    <div class="label-radio">
+                        <label>Jenis Kelamin</label>
+                    </div>
+                    <div class="radio-radio">
+                        <div class="radio-option">
+                            <input type="radio" id="laki" name="jenis" value="Laki-laki">
+                            <label for="laki">Laki-laki</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="perempuan" name="jenis" value="Perempuan">
+                            <label for="perempuan">Perempuan</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="pesan">Pesan</label>
+                    <textarea name="pesan" placeholder="Pesan" rows="5"></textarea>
+                </div>
+                <input type="submit" value="Submit"/>
             </form>
-            <form>
-                <label for="uh">Nama</label>
-            </form>
+            <div class="rangkuman">
+                <p>Nama: <span id="output-nama"></span></p>
+                <p>Tanggal Lahir: <span id="output-tl"></span></p>
+                <p>Jenis Kelamin: <span id="output-jenis"></span></p>
+                <p>Pesan: <span id="output-pesan"></span></p>
+            </div>
         </div>
     </div>
     <footer>
-
+        <p>Created by Husni</p>
     </footer>
     <script src="js\script.js"></script>
 </body>
